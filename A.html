@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    .quiz-question {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .quiz-options {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .quiz-option {
+        margin-bottom: 10px;
+    }
+
+    .hint-button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #008CBA;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #quiz-results {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+</style>
+
+</head>
+<body>
+
+<main>
+    <h1>Math Quiz</h1>
+
+    <div class="quiz-question">
+        <p>Question 1: What is 2 + 2?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q1" value="4"> 4</li>
+            <li class="quiz-option"><input type="radio" name="q1" value="5"> 5</li>
+            <li class="quiz-option"><input type="radio" name="q1" value="6"> 6</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('you are genius')">Hint</button>
+    </div>
+
+    <div class="quiz-question">
+        <p>Question 2: What is 5 * 8?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q2" value="35"> 35</li>
+            <li class="quiz-option"><input type="radio" name="q2" value="40"> 40</li>
+            <li class="quiz-option"><input type="radio" name="q2" value="45"> 45</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('you are genius')">Hint</button>
+    </div>
+    
+    
+  
+    
+<div class="quiz-question">
+        <p>Question 3: What is the next number in the sequence: 3, 7, 15, 31, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q3" value="42"> 42</li>
+            <li class="quiz-option"><input type="radio" name="q3" value="47"> 47 </li>
+            <li class="quiz-option"><input type="radio" name="q3" value="63"> 63</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each number is doubled and then one is added.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 4: What comes next in the sequence: 2, 5, 10, 17, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q4" value="26"> 26</li>
+            <li class="quiz-option"><input type="radio" name="q4" value="30"> 30</li>
+            <li class="quiz-option"><input type="radio" name="q4" value="32"> 32</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents consecutive prime numbers squared, minus 1.')">Hint</button>
+    </div>
+    
+    
+<div class="quiz-question">
+        <p>Question 5: What is the missing number in the sequence: 2, 6, 24, 120, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q5" value="420"> 420</li>
+            <li class="quiz-option"><input type="radio" name="q5" value="720"> 720</li>
+            <li class="quiz-option"><input type="radio" name="q5" value="240"> 240</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each number is multiplied by the next positive integer.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 6:  What is the next term in the sequence: 1, 11, 21, 1211, ...? </p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q6" value="11121"> 11121</li>
+            <li class="quiz-option"><input type="radio" name="q6" value="111222"> 111222</li>
+            <li class="quiz-option"><input type="radio" name="q6" value="111221"> 111221</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence describes the count of digits in the previous term.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 8:What comes next in the sequence: 8, 27, 64, 125, ...? </p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q8" value="216"> 216</li>
+            <li class="quiz-option"><input type="radio" name="q8" value="256"> 256</li>
+            <li class="quiz-option"><input type="radio" name="q8" value="250"> 250</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the cubes of consecutive integers.
+')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 9: What is the missing number in the sequence: 144, 121, 100, 81, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q9" value="64"> 64</li>
+            <li class="quiz-option"><input type="radio" name="q9" value="49"> 5</li>
+            <li class="quiz-option"><input type="radio" name="q9" value="25"> 25</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the squares of decreasing consecutive integers.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 10: What comes next in the sequence: 2, 5, 10, 17, 26, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q10" value="32"> 32</li>
+            <li class="quiz-option"><input type="radio" name="q10" value="37"> 37</li>
+            <li class="quiz-option"><input type="radio" name="q10" value="42"> 42</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the cumulative sum of consecutive positive integers.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 11:  What is the missing number in the sequence: 3, 10, 21, 36, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q11" value="50"> 50</li>
+            <li class="quiz-option"><input type="radio" name="q11" value="55"> 55</li>
+            <li class="quiz-option"><input type="radio" name="q11" value="60"> 60</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the sum of consecutive square numbers.
+')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 12: What comes next in the sequence: 1, 4, 27, 256, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q12" value="1024"> 1024</li>
+            <li class="quiz-option"><input type="radio" name="q12" value="3125"> 3125</li>
+            <li class="quiz-option"><input type="radio" name="q12" value="4096"> 4096</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the successive powers of consecutive integers.
+')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 13:  What is the next number in the sequence: 13, 26, 52, 104, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q13" value="208"> 208</li>
+            <li class="quiz-option"><input type="radio" name="q13" value="260"> 260</li>
+            <li class="quiz-option"><input type="radio" name="q13" value="312"> 312</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each term is obtained by doubling the previous term.
+')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 14: What comes next in the sequence: 0, 1, 1, 2, 3, 5, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q14" value="8"> 8</li>
+            <li class="quiz-option"><input type="radio" name="q14" value="10"> 10</li>
+            <li class="quiz-option"><input type="radio" name="q14" value="7"> 7</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence is formed by adding the last two terms to get the next term.')">Hint</button>
+    </div>
+    
+    
+<div class="quiz-question">
+        <p>Question 15: What is the missing number in the sequence: 4, 13, 40, 121, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q15" value="243"> 243</li>
+            <li class="quiz-option"><input type="radio" name="q15" value="364"> 364</li>
+            <li class="quiz-option"><input type="radio" name="q15" value="480"> 480</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each term is the cube of consecutive odd integers.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 16: What comes next in the sequence: 2, 12, 30, 56, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q16" value="70"> 70</li>
+            <li class="quiz-option"><input type="radio" name="q16" value="90"> 90</li>
+            <li class="quiz-option"><input type="radio" name="q16" value="100"> 100</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the differences between consecutive perfect cubes.')">Hint</button>
+    </div>
+    
+    
+<div class="quiz-question">
+        <p>Question 17: What is the missing number in the sequence: 1, 5, 14, 30, ...? </p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q17" value="42"> 42</li>
+            <li class="quiz-option"><input type="radio" name="q17" value="49"> 49</li>
+            <li class="quiz-option"><input type="radio" name="q17" value="61"> 61</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the sum of consecutive triangular numbers')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 18: What comes next in the sequence: 5, 12, 22, 35, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q18" value="42"> 42</li>
+            <li class="quiz-option"><input type="radio" name="q18" value="51"> 51</li>
+            <li class="quiz-option"><input type="radio" name="q18" value="60"> 60</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the differences between consecutive square numbers.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 19: What is the missing number in the sequence: 2, 12, 60, 280, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q19" value="1050"> 1050</li>
+            <li class="quiz-option"><input type="radio" name="q19" value="1200"> 1200</li>
+            <li class="quiz-option"><input type="radio" name="q19" value="1260"> 1260</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each term is obtained by multiplying the previous term by consecutive positive integers.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 20: What comes next in the sequence: 1, 2, 4, 8, 16, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q20" value="24"> 24</li>
+            <li class="quiz-option"><input type="radio" name="q20" value="32"> 32</li>
+            <li class="quiz-option"><input type="radio" name="q20" value="40"> 40</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the powers of 2.')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 21:  What is the next number in the sequence: 7, 16, 35, 74, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q21" value="120"> 120</li>
+            <li class="quiz-option"><input type="radio" name="q21" value="135"> 135
+          </li>
+            <li class="quiz-option"><input type="radio" name="q21" value="147"> 147</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('Each term is obtained by doubling the square of consecutive integers.
+')">Hint</button>
+    </div>
+    
+<div class="quiz-question">
+        <p>Question 22: What comes next in the sequence: 3, 25, 81, 147, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q22" value="192"> 192</li>
+            <li class="quiz-option"><input type="radio" name="q22" value="216"> 216</li>
+            <li class="quiz-option"><input type="radio" name="q22" value="243"> 243</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents the sum of consecutive cubes.
+')">Hint</button>
+    </div>
+    
+    <div class="quiz-question">
+        <p>Question 23: What is the missing number in the sequence: 2, 5, 13, 29, ...?</p>
+        <ul class="quiz-options">
+            <li class="quiz-option"><input type="radio" name="q23" value="43"> 43</li>
+            <li class="quiz-option"><input type="radio" name="q23" value="57"> 57</li>
+            <li class="quiz-option"><input type="radio" name="q23" value="61"> 61</li>
+        </ul>
+        <button class="hint-button" onclick="showHint('The sequence represents prime numbers minus 1.')">Hint</button>
+    </div>
+    
+
+    <!-- Add more math questions as needed -->
+
+    <button onclick="submitQuiz()">Submit Quiz</button>
+
+    <div id="quiz-results"></div>
+</main>
+
+<script>
+
+
+    const questions = document.querySelectorAll('.quiz-question');
+    let currentQuestion = 0;
+
+    function startQuiz() {
+        document.querySelector('button').style.display = 'none';
+        showQuestion();
+    }
+
+    function showQuestion() {
+        questions[currentQuestion].classList.add('active');
+        setTimeout(() => {
+            questions[currentQuestion].classList.remove('active');
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                // Quiz finished, show results
+                submitQuiz();
+            }
+        }, 20000); // 20 seconds
+    }
+function submitQuiz() {
+    const answers = {};
+    let correctAnswers = 0;
+
+    for (let i = 1; i <= 23; i++) {
+        const radioButtons = document.getElementsByName(`q${i}`);
+        let selectedValue = null;
+
+        radioButtons.forEach(button => {
+            if (button.checked) {
+                selectedValue = button.value;
+            }
+        });
+
+        answers[`q${i}`] = selectedValue;
+
+        // Check answers
+        if (selectedValue === "4" && i === 1) correctAnswers++;
+        if (selectedValue === "40" && i === 2) correctAnswers++;
+        if (selectedValue === "63" && i === 3) correctAnswers++;
+        if (selectedValue === "26" && i === 4) correctAnswers++;
+        if (selectedValue === "720" && i === 5) correctAnswers++;
+        if (selectedValue === "111221" && i === 6) correctAnswers++;
+        if (selectedValue === "216" && i === 8) correctAnswers++;
+        if (selectedValue === "64" && i === 9) correctAnswers++;
+        if (selectedValue === "37" && i === 10) correctAnswers++;
+        if (selectedValue === "55" && i === 11) correctAnswers++;
+        if (selectedValue === "3125" && i === 12) correctAnswers++;
+        if (selectedValue === "208" && i === 13) correctAnswers++;
+        if (selectedValue === "8" && i === 14) correctAnswers++;
+        if (selectedValue === "364" && i === 15) correctAnswers++;
+        if (selectedValue === "90" && i === 16) correctAnswers++;
+        if (selectedValue === "61" && i === 17) correctAnswers++;
+        if (selectedValue === "51" && i === 18) correctAnswers++;
+        if (selectedValue === "1260" && i === 19) correctAnswers++;
+        if (selectedValue === "32" && i === 20) correctAnswers++;
+        if (selectedValue === "147" && i === 21) correctAnswers++;
+        if (selectedValue === "243" && i === 22) correctAnswers++;
+       if (i === 23 && selectedValue === "61") correctAnswers++;
+        
+        // Add more checks for other questions
+    }
+
+    const resultsContainer = document.getElementById("quiz-results");
+    resultsContainer.innerHTML = `
+        <h2>Quiz Results</h2>
+        <p>You got ${correctAnswers} out of 23 questions correct!</p>
+    `;
+}
+
+    function showHint(hint) {
+        alert(hint); // You can customize this to display the hint in a more stylish way
+    }
+</script>
+
+</body>
+</html>
